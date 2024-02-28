@@ -1,6 +1,6 @@
 {
-  "name": "template-container",   // "template"を任意の名前にする
-  "service": "template-dev",      // "template"をcompose-dev.ymlと同じにする
+  "name": "agent-test-container",
+  "service": "agent-test-dev",
   "workspaceFolder": "/workspace",
   "dockerComposeFile": "compose-dev.yml",
   "remoteUser": "pyuser",

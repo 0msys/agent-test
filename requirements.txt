@@ -1,1 +1,5 @@
 streamlit
+chainlit
+langchain
+langchain_openai
+duckduckgo-search

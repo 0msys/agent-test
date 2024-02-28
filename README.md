@@ -1,71 +1,36 @@
 # このリポジトリについて
 
-このリポジトリは、Streamlitを使ったWebアプリケーションを作成するためのテンプレートです。
-紹介は[こちらの記事](https://zenn.dev/0msys/articles/3524948d15c8d5)にあります。
-コンテナを使って開発・デプロイを行うことを想定しています。
+このリポジトリは[langchain](https://www.langchain.com/)のAgentを[Streamlit](https://streamlit.io/)と[Chainlit](https://docs.chainlit.io/get-started/overview)のそれぞれで実装したものです。
 
-こちらを使う前に、Docker desktop等のコンテナを使える環境を整えてください。
+詳細は[こちらの記事](https://zenn.dev/0msys/articles/3524948d15c8d5)にあります。
 
+## 動かし方
 
-## 使い方
+※ 動作させるには有効なOpenAIのAPIキーが必要です。
 
-まずは「Use this template」からこのリポジトリをベースとした新しいリポジトリを作成してください。
-
-
-### 開発時
-
-1. リポジトリをクローンする
-    
-    作成したリポジトリをクローンしてください。
-
-
-1.  リポジトリをVS Codeで開く
-
-    クローンしたリポジトリをVS Codeで開いてください。
-
-
-1. プロジェクトの名称を決める
-
-    プロジェクトの名称を決めてください。ここでは例として、`myapp`という名称で作成することにします。
-
-
-1. プロジェクト名称の置き換え
-
-    以下のファイルの中で、`template`という文字列を全てプロジェクト名(例の場合は`myapp`)に置き換えてください。
-
-    - /.devcontainer/devcontainer.json
-    - /.devcontainer/compose-dev.yml
-    - /compose.yml
-
-
-1. 開発コンテナの起動
-
-    左下の`><`をクリックして、`Reopen in Container`(日本語では`コンテナで再度開く`)を選択してください。
-
-    左下に`Dev Container: myapp-container`と表示されたら、開発コンテナの起動が完了していますので、開発の準備は完了です。
-
-
-
-1. 開発
-
-    以降は通常の開発と同様に開発を進めてください。
-
-    以下のコマンドを実行すると、Streamlitのアプリが起動するので、ブラウザで`localhost:8501`にアクセスしてください。
-
-    Streamlitは、ファイルの変更を検知して自動的に更新されるので、アプリを起動したまま開発を進めることができます。
-
-    ```bash
-    streamlit run src/Home.py
+1. リポジトリをクローンし、`agent-test.env`というファイルを作成し、以下を記述して保存してください。
+  
+    ```env
+    OPENAI_API_KEY="YOUR_API_KEY"
     ```
 
+2. ファイルを用意したら、開発コンテナを起動してください。
 
-### アプリの起動
+3. 開発コンテナが起動したら、以下のコマンドでそれぞれ実行してください。
 
-開発がひと段落し、開発ではなく通常使用する場合は、以下のコマンドを実行してデプロイしてください。
+   - Streamlitを実行する場合
+  
+      ```bash
+      streamlit run src/streamlit.py
+      ```
 
-```bash
-docker compose up -d
-```
+   - Chainlitを実行する場合
+  
+      ```bash
+      chainlit run src/chainlit.py
+      ```
 
-アプリは、`localhost:8501`にアクセスすることで利用できます。
+4. ブラウザでにアクセスしてください。
+   - Streamlit: `http://localhost:8501`
+   - Chainlit: `http://localhost:8000`
 
