@@ -2,7 +2,7 @@
 
 このリポジトリは[langchain](https://www.langchain.com/)のAgentを[Streamlit](https://streamlit.io/)と[Chainlit](https://docs.chainlit.io/get-started/overview)のそれぞれで実装したものです。
 
-詳細は[こちらの記事](https://zenn.dev/0msys/articles/3524948d15c8d5)にあります。
+詳細は[こちらの記事](https://zenn.dev/0msys/articles/d5a97c8670d5fb)にあります。
 
 ## 動かし方
 
