@@ -34,3 +34,10 @@
    - Streamlit: `http://localhost:8501`
    - Chainlit: `http://localhost:8000`
 
+## エラーで動かない場合
+
+ライブラリのバージョンによってはエラーが発生する場合があります。その場合は、以下のコマンドでライブラリのバージョンを変更してください。
+
+```bash
+pip install -r requirements_lock.txt
+```
